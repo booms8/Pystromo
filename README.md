@@ -11,7 +11,8 @@ I'm being lazy and just copying helpful text from around the web to this readme.
 ### Project Home
 
 Website:    https://launchpad.net/pystromo
-Author:     https://launchpad.net/~raumkraut
+
+Author:     https://launchpad.net/~raumkraut (Muchos gracias!!!)
 
 A Python program which allows arbitrary remapping of input events from any standard linux input device. It can turn any input device into virtually any other; joysticks controlling the mouse pointer, mice pretending to be keyboards, keyboards masquerading as joysticks!
 
@@ -24,6 +25,7 @@ As best as I can remember, and with the exception of graphical configuration too
 ### Installation
 
 http://www.thelupine.com/content/pystromo-and-belkin-n52te
+
 http://ubuntuforums.org/showthread.php?t=948833
 
 ### Troubleshooting
