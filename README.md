@@ -24,9 +24,32 @@ Author:     https://launchpad.net/~raumkraut (Muchos gracias!!!)
 
 ### Installation
 
-http://www.thelupine.com/content/pystromo-and-belkin-n52te
+I.  http://www.thelupine.com/content/pystromo-and-belkin-n52te
 
-http://ubuntuforums.org/showthread.php?t=948833
+Getting the Belkin Nostromo n52te working in Linux is pretty simple. You can use pystromo: https://launchpad.net/pystromo
+
+For this, under Karmic, I simply needed to add uinput to my /etc/modules file (for reboot) and manually load it once for now:
+sudo sh -c "echo uinput >> /etc/modules"
+sudo modprobe uinput
+
+Then, after extracting the pystromo-0.6.0.tar.gz file, I just copied the pystromo/config/52-pystromo-debian.rules file into /etc/udev/rules.d/52-pystromo-debian.rules
+tar -xvf pystromo-0.6.0.tar.gz
+sudo cp pystromo/config/52-pystromo-debian.rules /etc/udev/rules.d/52-pystromo-debian.rules
+
+Next, I reloaded the udev rules:
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+Then, I moved the extracted pystromo folder into my ~/.config directory
+mv pystromo ~/.config/
+
+Finally, I just made sure to add an auto-launcher for:
+
+python ~/.config/pystromo/pystromo-mon.py 
+
+...and everything is good to go.  This will make sure pystromo is up and running each time your reboot.  Otherwise, if you want to run it manually each time, then just type the above into a "run" dialog.
+
+II.  http://ubuntuforums.org/showthread.php?t=948833
 
 ### Troubleshooting
 
