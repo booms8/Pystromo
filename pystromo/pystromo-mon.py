@@ -4,6 +4,7 @@
 	starting and stopping the input-remapper script when needed.
 """
 
+from __future__ import print_function
 import os, sys
 import time
 import signal
@@ -11,7 +12,6 @@ import subprocess
 from optparse import OptionParser
 
 from lib import config
-from __future__ import print_function
 
 
 # Constants
