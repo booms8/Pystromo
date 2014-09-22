@@ -1,12 +1,12 @@
 Pystromo
 ========
 
-Current Version: 0.6.0
+Current Version: 0.6.1
 ----------------------
 
 ### Introduction
 
-I'm being lazy and just copying helpful text from around the web to this readme.  Attribution where possible.
+I'm being lazy and just copying helpful text from around the web to this readme.  Attribution where possible. (This README originaly compiled by https://github.com/bryongibson)
 
 ### Project Home
 
