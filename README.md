@@ -22,6 +22,8 @@ Author:     https://launchpad.net/~raumkraut (Muchos gracias!!!)
 
 *As best as I can remember, and with the exception of graphical configuration tools, Pystromo now matches and exceeds all the functionality of the Windows Nostromo driver software.*    -- Raumkraut
 
+booms8's notes: Pystromo should now work with any python version newer than 2.6.
+
 ### Installation
 
 I.  http://www.thelupine.com/content/pystromo-and-belkin-n52te
