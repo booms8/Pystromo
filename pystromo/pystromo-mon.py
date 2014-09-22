@@ -1,10 +1,11 @@
+# Python 3 compatibility:
+from __future__ import print_function
 #!/usr/bin/env python
 """
 	Script which monitors the state of the system's running processes,
 	starting and stopping the input-remapper script when needed.
 """
 
-from __future__ import print_function
 import os, sys
 import time
 import signal
