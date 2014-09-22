@@ -11,6 +11,7 @@ import subprocess
 from optparse import OptionParser
 
 from lib import config
+from __future__ import print_function
 
 
 # Constants
@@ -131,7 +132,7 @@ while looping:
 	# Load the config file if needed
 	if loadConf:
 		if options.verbose:
-			print 'Loading configuration file'
+			print('Loading configuration file')
 		conf = loadConfig()
 		# Update what to look out for
 		processes = set(proc for proc, filename in conf.mappings)
@@ -163,7 +164,7 @@ while looping:
 			
 			# Notify of stoppage only if there's no imminent startage.
 			if options.verbose and not files:
-				print 'STOPPED'
+				print('STOPPED')
 		
 		
 		# We only start the daemon if we've got some mapping files.
@@ -175,7 +176,7 @@ while looping:
 				command.append('-R')
 			
 			if options.verbose:
-				print ' '.join(command)
+				print(' ' + join(command))
 			
 			daemonProcess = subprocess.Popen(command)
 			
