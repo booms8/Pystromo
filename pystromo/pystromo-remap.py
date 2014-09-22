@@ -1,3 +1,4 @@
+from __future__ import print_function
 #!/usr/bin/env python
 """
 	Takes input from items of (USB) hardware,
@@ -8,8 +9,6 @@
 	This program is distributed under the terms of the GPL
 	(I'll put the proper header in here later)
 """
-
-from __future__ import print_function
 
 import os
 import time
