@@ -1,3 +1,6 @@
+from __future__ import unicode_literals
+from __future__ import absolute_import
+
 """
 	Stuff specific to devices
 """
@@ -133,7 +136,7 @@ class InputDevice (object):
 	
 	def __repr__ (self):
 		params = (self.__class__.__name__, str(self.id), len(self._nodes))
-		return '<%s "%s" on %d device nodes>' % params
+		return '<{0} "{1}" on {!s} device nodes>'.format(params)
 		
 	
 	def nodes (self):
@@ -623,7 +626,7 @@ class InputDevice (object):
 			break
 		else:
 			# No nodes will accept this event
-			raise LookupError ('unsupported event: %s' % repr(event))
+			raise LookupError ('unsupported event: ' + repr(event))
 		
 	
 	def close (self):

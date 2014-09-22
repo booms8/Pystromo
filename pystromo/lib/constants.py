@@ -1,3 +1,7 @@
+from __future__ import print_function
+from __future__ import unicode_literals
+from __future__ import absolute_import
+
 """
 	Holds the scancodes, keycodes, barcodes, etc.
 """
@@ -27,18 +31,18 @@ BUFFER_512 = '\0' * 512
 # This will grab all input on a specific device.
 EVIOCGRAB = 0x40044590
 # These are used to get info about a device
-EVIOCGID = ~int(~0x80084502L & 0xFFFFFFFFL)
+EVIOCGID = ~int(~0x80084502 & 0xFFFFFFFF)
 EVIOCGID_FORMAT = 'HHHH'
 EVIOCGID_BUFFER = "\0" * struct.calcsize(EVIOCGID_FORMAT)
 # This is used to get the textual name of a device (eg. "Honey Bee  Nostromo SpeedPad2 ")
-EVIOCGNAME_512 = ~int(~0x82004506L & 0xFFFFFFFFL)
+EVIOCGNAME_512 = ~int(~0x82004506 & 0xFFFFFFFF)
 EVIOCGNAME_512_BUFFER = BUFFER_512
 # This if for getting information about what events a device supports
-EVIOCGBIT_512 = ~int(~0x81fe4520L & 0xFFFFFFFFL)
+EVIOCGBIT_512 = ~int(~0x81fe4520 & 0xFFFFFFFF)
 EVIOCGBIT_512_FORMAT = 'I' * (512 / struct.calcsize('I'))
 EVIOCGBIT_512_BUFFER = BUFFER_512
 # This is for getting information about an absolute axis
-EVIOCGABS = ~int(~0x80144540L & 0xFFFFFFFFL)
+EVIOCGABS = ~int(~0x80144540 & 0xFFFFFFFF)
 EVIOCGABS_FORMAT = 'iiiii'
 EVIOCGABS_BUFFER = '\0' * struct.calcsize(EVIOCGABS_FORMAT)
 

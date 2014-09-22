@@ -64,7 +64,7 @@ class Event (object):
 				code,
 				self.value,
 				)
-		return '<%s timestamp=%r, type=%r, code=%r, value=%r>' % params
+		return '<{0} timestamp={1}, type={2}, code={3}, value={4}>'.format(params)
 		
 	
 	def __str__ (self):

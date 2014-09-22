@@ -122,7 +122,7 @@ class Mapper (_BaseConfig):
 				self._loadMapSection(section)
 				
 			else:
-				raise ValueError ('Invalid section: %s' % section)
+				raise ValueError ('Invalid section: ' + section)
 			
 		
 	
@@ -164,7 +164,7 @@ class Mapper (_BaseConfig):
 				try:
 					modes.append(getattr(const, mode))
 				except AttributeError:
-					raise ValueError ('Invalid mode: %s' % mode)
+					raise ValueError ('Invalid mode: ' + mode)
 			modes = tuple(modes)
 		
 		if not name:
@@ -262,12 +262,12 @@ class ReMapping (object):
 		
 	
 	def __repr__ (self):
-		return '<%s %s>' % (self.__class__.__name__, str(self))
+		return '<{0} {1}>'.format(self.__class__.__name__, str(self))
 	
 	def __str__ (self):
 		# Convert all the lists and tuples and things to strings
 		input = '+'.join(repr(key) for key in self.input)
-		return '%s:%s' % (input, str(self.output))
+		return '{0}:{1}'.format(input, str(self.output))
 		
 	
 	def decode (self, string):
@@ -359,7 +359,7 @@ class ReMapping (object):
 			
 		if not hasattr(const, string):
 			# A code we don't understand
-			raise ValueError ('"%s" is an invalid code' % string)
+			raise ValueError ('"{0}" is an invalid code'.format(string))
 		
 		return Key(string, min=minValue, max=maxValue)
 		
@@ -376,7 +376,7 @@ class ReMapping (object):
 		
 		# Inputs can't have sequences in them
 		if ',' in string:
-			raise ValueError ('invalid input mapping: "%s"' % string)
+			raise ValueError ('invalid input mapping: "{0}"'.format(string))
 		
 		# Standard decode always returns a cycle of sequences.
 		# We're only interested in the very first value.
@@ -426,7 +426,7 @@ class Key (object):
 		return hash((self._string, self._min, self._max))
 	
 	def __repr__ (self):
-		return '%s@%s~%s' % (str(self._string), str(self._min), str(self._max))
+		return '{0}@{1}~{2}'.format(str(self._string), str(self._min), str(self._max))
 	
 	def __str__ (self):
 		return self.string
@@ -458,7 +458,7 @@ class Key (object):
 			
 			# We don't know what to do if the other's value/range is unspecified!
 			if other._min is None or other._max is None:
-				raise ValueError ("Can't check for containment of unlimited Key: %s" % repr(other))
+				raise ValueError ("Can't check for containment of unlimited Key: " + repr(other))
 			
 			if (self._min is None or self._min <= other._min) \
 					and (self._max is None or self._max >= other._max):

@@ -1,3 +1,7 @@
+from __future__ import print_function
+from __future__ import unicode_literals
+from __future__ import absolute_import
+
 """
 	Stuff for parsing and storing configuration files' data.
 """
@@ -23,7 +27,7 @@ class _BaseConfig (object):
 	
 	def __repr__ (self):
 		params = (self.__module__, self.__class__.__name__, len(self._files))
-		return '<%s.%s using %d files>' % params
+		return '<{0}.{1} using {2!s} files>'.format(params)
 	
 	def clear (self):
 		"""
@@ -46,7 +50,7 @@ class _BaseConfig (object):
 		if len(found) < len(filenames):
 			for file in filenames:
 				if file not in found:
-					print 'WARNING: Unable to load "%s"' % file
+					print('WARNING: Unable to load "{0}"'.format(file))
 		
 	
 	def reload (self):
@@ -82,7 +86,7 @@ class MonitorConfig (_BaseConfig):
 			try:
 				fd = open(file)
 			except IOError:
-				print 'WARNING: Unable to load "%s"' % file
+				print('WARNING: Unable to load "{0}"'.format(file))
 				continue
 			
 			for line in fd.readlines():
@@ -98,7 +102,7 @@ class MonitorConfig (_BaseConfig):
 				try:
 					process, conf = line.split('=')
 				except ValueError:
-					print 'WARNING: Invalid config line "%s"' % line
+					print('WARNING: Invalid config line "{0}"'.format(line))
 					continue
 				
 				if process.strip() == '*':

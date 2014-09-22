@@ -1,3 +1,7 @@
+from __future__ import print_function
+from __future__ import unicode_literals
+from __future__ import absolute_import
+
 #!/usr/bin/env python
 # Some unit tests for stuff
 
@@ -7,7 +11,7 @@ def test(expression, message=None):
 	if not message:
 		message = expression
 	if not eval(expression):
-		print 'FAILED: %s' % message
+		print('FAILED: ' + message)
 
 
 # Key objects
@@ -22,7 +26,7 @@ chord_ba = mapping.KeyChord((key_b, key_a))
 chord_bigx = mapping.KeyChord((key_bigx,))
 
 def runTests():
-	print 'Testing Pystromo:'
+	print('Testing Pystromo:')
 	# Key containment
 	test('key_midx in key_bigx')
 	test('key_midx in key_midx')
@@ -38,7 +42,7 @@ def runTests():
 	test('key_bigx in chord_bigx')
 	test('key_outerx not in chord_bigx')
 	
-	print 'Done'
+	print('Done')
 	
 
 
